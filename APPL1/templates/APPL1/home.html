@@ -1,0 +1,64 @@
+{% extends 'APPL1/wrapper.html'%}
+
+{% block Page_Title %}
+  Dashboard
+{% endblock%}
+{% block Refresh_buttons %}
+  <button type="button" class="btn btn-sm btn-outline-secondary text-nowrap" onClick="window.location.reload();"><font size="4" color="red">Refresh data</font></button>
+{% endblock%}
+
+{% block  Main_Table_Header %}
+  <div class="table-responsive">
+    <table class="table table-hover table-outline
+     table-vcenter text-nowrap card-table">
+      <thead>
+        <tr>
+          <th><button type="button" class="btn btn-sm btn-outline-secondary">Edit<br>config</button></th>
+          <th>Name</th>
+          <th>Status</th>
+          <th>Program</th>
+          <th>Program<br>Alias</th>
+          <th>History</th>
+          <th>Time</th>
+          <th>Data</th>
+          <th>Plan<br>Program</th>
+          <th>Plan<br>Program_Alias</th>
+          <th>Repeat</th>
+          <th>Plan<br>Time</th>
+          <th>Plan<br>Data</th>
+        </tr>
+      </thead>
+  {% endblock %}
+
+{% block  Main_Table %}
+
+  <tbody>
+
+{% for Device_String in Device_Strings %}
+  <tr>
+    <td>
+      <div class="custom-control custom-checkbox">
+        <input type="checkbox" class="custom-control-input" id="same-address">
+        <label class="custom-control-label" for="same-address"</label>
+      </div>
+    </td>
+
+    <td> <a href="{% url 'Device_details' pk=Device_String.pk %}"> {{Device_String.Name}} </a></td>
+    <td> {{Device_String.Status}} </td>
+    <td align="center">  {{Device_String.Program}} </td>
+    <td> {{Device_String.Program_Alias}} </td>
+    <td> {{Device_String.History}} </td>
+    <td> {{Device_String.Time}} </td>
+    <td> {{Device_String.Data}} </td>
+    <td align="center"> {{Device_String.Plan_Program}} </td>
+    <td> {{Device_String.Plan_Program_Alias}} </td>
+    <td> {{Device_String.Repeat}} </td>
+    <td> {{Device_String.Plan_Time}} </td>
+    <td> {{Device_String.Plan_Data}} </td>
+  </tr>
+
+{% endfor %}
+
+ </tbody>
+</table>
+{% endblock %}

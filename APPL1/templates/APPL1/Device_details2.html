@@ -1,0 +1,162 @@
+{% extends 'APPL1/wrapper.html'%}
+
+{% block Page_Title %}
+  {{Device_Strings.Name}} Configurations
+{% endblock%}
+
+{% block Refresh_buttons %}
+  <button type="button" class="btn btn-sm btn-outline-secondary text-nowrap"><font size="4" color="red">Refresh data</font></button>
+{% endblock%}
+
+
+
+  {% block  Main_Table_Header %}
+  <div class="table-responsive">
+    <table class="table table-hover table-outline
+     table-vcenter text-nowrap card-table">
+      <thead>
+        <tr>
+          <th>Name</th>
+          <th>Status</th>
+          <th>Program</th>
+          <th>Program<br>Alias</th>
+          <th>History</th>
+          <th>Time</th>
+          <th>Data</th>
+        </tr>
+      </thead>
+  {% endblock %}
+
+  {% block  Main_Table %}
+    <tbody>
+    <tr>
+      <td> {{Device_Strings.Name}} </td>
+      <td> {{Device_Strings.Status}} </td>
+      <td align="center">  {{Device_Strings.Program}} </td>
+      <td> {{Device_Strings.Program_Alias}} </td>
+      <td> {{Device_Strings.History}} </td>
+      <td> {{Device_Strings.Time}} </td>
+      <td> {{Device_Strings.Data}} </td>
+      </tr>
+   </tbody>
+  </table>
+</div>
+
+<div class="row">
+    <div class="col-md-1 mb-3">
+    </div>
+</div>
+<div class="row">
+    <div class="col-md-1 mb-3">
+    </div>
+</div>
+
+
+<div class="row">
+    <div class="col-md-1 mb-3">
+      <label for="country">Number</label>
+      <select class="custom-select d-block w-10" id="Program_ID" required>
+        <option value="">Choose...</option>
+        <option>01</option>
+        <option>02</option>
+        <option>03</option>
+        <option>04</option>
+        <option>05</option>
+        <option>06</option>
+        <option>07</option>
+        <option>08</option>
+        <option>09</option>
+        <option>10</option>
+        <option>11</option>
+        <option>12</option>
+      </select>
+      <div class="invalid-feedback">
+        Please select a valid Program_ID.
+      </div>
+    </div>
+
+    <div class="col-md-2 mb-3">
+      <label for="country">Planned Program Alias</label>
+      <select class="custom-select d-block w-10" id="Program_Alias" required>
+        <option value="">Choose...</option>
+        <option>01</option>
+        <option>02</option>
+        <option>03</option>
+        <option>04</option>
+        <option>05</option>
+        <option>06</option>
+        <option>07</option>
+        <option>08</option>
+        <option>09</option>
+        <option>10</option>
+        <option>11</option>
+        <option>12</option>
+      </select>
+      <div class="invalid-feedback">
+        Please select a valid Program_Alias.
+      </div>
+    </div>
+
+    <div class="col-md-2 mb-3">
+      <label for="country">Repeat</label>
+      <select class="custom-select d-block w-10" id="Program_Repeat" required>
+        <option value="">Choose...</option>
+        <option>01</option>
+        <option>02</option>
+        <option>03</option>
+        <option>04</option>
+        <option>05</option>
+        <option>06</option>
+        <option>07</option>
+        <option>08</option>
+        <option>09</option>
+        <option>10</option>
+        <option>11</option>
+        <option>12</option>
+      </select>
+      <div class="invalid-feedback">
+        Please select a valid Program_Alias.
+      </div>
+    </div>
+
+    <div class="col-md-1,2 mb-3">
+      <label for="zip">Planned Start Time</label>
+      <input type="time" class="form-control" id="zip" placeholder="" required>
+      <div class="invalid-feedback">
+        Zip code required.
+      </div>
+    </div>
+
+    <div class="col-md-2 mb-3">
+      <label for="zip">Planned Start Date</label>
+      <input type="date" class="form-control" id="zip" placeholder="" required>
+      <div class="invalid-feedback">
+        Zip code required.
+      </div>
+    </div>
+
+    <div class="col-md-1,2 mb-3">
+      <label for="zip">Planned Stop Time</label>
+      <input type="time" class="form-control" id="zip" placeholder="" required>
+      <div class="invalid-feedback">
+        Zip code required.
+      </div>
+    </div>
+
+    <div class="col-md-2 mb-3">
+      <label for="zip">Planned Stop Date</label>
+      <input type="date" class="form-control" id="zip" placeholder="" required>
+      <div class="invalid-feedback">
+        Zip code required.
+      </div>
+    </div>
+
+  </div>
+
+  {% endblock %}
+
+  {% block Apply_buttons %}
+  <div class="btn-group mr-2">
+      <button  class="btn btn-primary btn-lg btn-block" type="submit">Apply changes</button>
+  </div>
+  {% endblock%}
